@@ -33,3 +33,33 @@ deque.dequeue("front");
 console.log(deque.toString());
 deque.dequeue("end");
 console.log(deque.toString());
+
+
+//Exercice 2:
+//Use the Deque class you created in Example 5-1 to determine if a given word is a palindrome.
+
+function isPalindrome(word) {
+  word = word.toString().split('');
+  var deque = new Deque();
+
+  for (var i = 0; i < word.length; i++) {
+    deque.enqueue(word[i], "front");
+  }
+
+  while (deque.length() > 1) {
+    if (deque.dequeue("front") != deque.dequeue("end")) {
+      console.log("called");
+      return false;
+    }
+    return true;
+  }
+}
+
+console.log("canal is a palindrome: " + isPalindrome("canal"));
+console.log("1001 is a palindrome: " + isPalindrome(1001));
+console.log("abba is a palindrome: " + isPalindrome("abba"));
+
+//Exercice 3
+//Modify the priority queue example from Example 5-5 so that the higher-priority elements have higher numbers rather than lower numbers. Test your implementation with the example in the chapter.
+
+

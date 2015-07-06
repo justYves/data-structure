@@ -33,4 +33,8 @@ Queue.prototype.isEmpty = function() {
   return false;
 };
 
+Queue.prototype.length = function(){
+  return this.data.length;
+}
+
 module.exports = Queue;
