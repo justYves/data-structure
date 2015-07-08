@@ -15,11 +15,26 @@ LinkedList.prototype.find = function(value) {
   return currentNode;
 };
 
+LinkedList.prototype.findPrevious = function(value) {
+  var currentNode = this.head;
+  while ((currentNode.next != null) &&(currentNode.next.value != value)) {
+    currentNode = currentNode.next;
+  }
+  return currentNode;
+};
+
 LinkedList.prototype.insert = function(value, after) {
   var newNode = new Node(value);
   var currentNode = this.find(after);
   newNode.next = currentNode.next;
   currentNode.next = newNode;
+};
+
+LinkedList.prototype.remove = function(value) {
+  var previousNode = this.findPrevious(value);
+  if (previousNode.next){
+    previousNode.next = previousNode.next.next;
+  }
 };
 
 LinkedList.prototype.display = function() {
