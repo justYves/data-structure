@@ -21,7 +21,7 @@ DoublyLinkedList.prototype.insert = function(value, after) {
   newNode.previous = currentNode;
   currentNode.next = newNode;
 
-  if(nextNode){
+  if (nextNode) {
     nextNode.previous = newNode;
   }
 };
