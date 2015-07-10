@@ -24,20 +24,7 @@ DoublyLinkedList.prototype.insert = function(value, after) {
   if(nextNode){
     nextNode.previous = newNode;
   }
-  // if (previousNode.next) {
-  //   previousNode.next.previous = newNode;
-  // }
 };
-
-
-// function insert(newElement, item) {
-//   var newNode = new Node(newElement);
-//   var current = this.find(item);
-//   newNode.next = current.next;
-//   newNode.previous = current;
-//   current.next = newNode;
-// }
-
 
 DoublyLinkedList.prototype.remove = function(value) {
   var nodeToRemove = this.find(value);
