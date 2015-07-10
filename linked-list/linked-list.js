@@ -3,7 +3,8 @@ function Node(value) {
   this.next = null;
 }
 
-function LinkedList() {
+function LinkedList(NodeConstructor) {
+  Node = NodeConstructor || Node;
   this.head = new Node("head");
 }
 
@@ -17,7 +18,7 @@ LinkedList.prototype.find = function(value) {
 
 LinkedList.prototype.findPrevious = function(value) {
   var currentNode = this.head;
-  while ((currentNode.next != null) &&(currentNode.next.value != value)) {
+  while ((currentNode.next !== null) &&(currentNode.next.value != value)) {
     currentNode = currentNode.next;
   }
   return currentNode;
@@ -39,8 +40,8 @@ LinkedList.prototype.remove = function(value) {
 
 LinkedList.prototype.display = function() {
   var currentNode = this.head;
-  while (currentNode) {
-    console.log(currentNode.value);
+  while (currentNode.next) {
+    console.log(currentNode.next.value);
     currentNode = currentNode.next;
   }
 };
