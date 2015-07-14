@@ -44,6 +44,8 @@ wordParser(sentence);
 words.showAll();
 
 // Rewrite exercise 2 so that it displays the words in sorted order.
+//
+console.log("<--- SORTED --->");
 words.showAll = function(){
   var self = this;
   Object.keys(this.data).sort().forEach(function(key) {
